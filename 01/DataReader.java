@@ -24,7 +24,7 @@ public class DataReader {
         ArrayList<Integer> list2 = new ArrayList<Integer>();
 
         try {
-            File myObj = new File("data.txt");
+            File myObj = new File("./01/data.txt");
             Scanner myReader = new Scanner(myObj);
             while(myReader.hasNextLine()) {
                 String data = myReader.nextLine();

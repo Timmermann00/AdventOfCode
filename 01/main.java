@@ -10,8 +10,10 @@ public class main {
             Arrays.sort(line1);
             Arrays.sort(line2);
 
-            int result = compareLinesAndCalculateDifference.compareLinesAndCalculate(line1, line2);
-            System.out.println("Result is:" + result);
+            int distance = compareLinesAndCalculate.calculateDistance(line1, line2);
+            int similarityScore = compareLinesAndCalculate.calculateSimilarityScore(line1, line2);
+            System.out.println("Distance is:" + distance);
+            System.out.println("similarityScore is:" + similarityScore);
 
         } else {
             System.out.println("Failed to read data from file.");
