@@ -21,4 +21,7 @@ public class compareListForSafety {
         }
         return true;
     }
+    public static boolean checkDifferenceBetweenLevels(int[] report) {
+        return true;
+    }
 }

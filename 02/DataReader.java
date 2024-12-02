@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class DataReader {
 
-    public static String[] readDataAndCheckForSafety() {
+    public static int readDataAndCheckForSafety() {
         try {
             File myObj = new File("data.txt");
             Scanner myReader = new Scanner(myObj);
@@ -17,17 +17,20 @@ public class DataReader {
                 {
                     report[i] = Integer.parseInt(values[i]);
                 }
-                if(compareListForSafety.checkIfDecreasing(report) || compareListForSafety.checkIfIncreasing(report))
+                if(compareListForSafety.checkIfDecreasing(report))
                 {
+                    
+                } else if (compareListForSafety.checkIfIncreasing(report)) {
 
                 }
+                return 0;
             }
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error has occurred");
             e.printStackTrace();
-            return null;
+            return 0;
         }
+        return 0;
     }
-
 }
