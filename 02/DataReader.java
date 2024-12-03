@@ -19,18 +19,34 @@ public class DataReader {
                 }
                 if(compareListForSafety.checkIfDecreasing(report))
                 {
-                    
+                    if(compareListForSafety.checkDifferenceBetweenLevels(report))
+                    {
+                        counter++;
+                    }
                 } else if (compareListForSafety.checkIfIncreasing(report)) {
-
+                    report = reverseData(report);
+                    if(compareListForSafety.checkDifferenceBetweenLevels(report))
+                    {
+                        counter++;
+                    }
                 }
-                return 0;
             }
             myReader.close();
+            return counter;
         } catch (FileNotFoundException e) {
             System.out.println("An error has occurred");
             e.printStackTrace();
             return 0;
         }
-        return 0;
+    }
+    public static int[] reverseData(int[] report)
+    {
+        for(int i = 0; i < report.length /2; i++)
+        {
+            int temp = report[i];
+            report[i] = report[report.length - i - 1];
+            report[report.length - i -1] = temp;
+        }
+        return report;
     }
 }
